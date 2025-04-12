@@ -4,6 +4,6 @@ seaborn
 seaborn==0.12.2
 matplotlib
 scikit-learn
-pickle
+# pickle
 numpy
 streamlit-lottie
