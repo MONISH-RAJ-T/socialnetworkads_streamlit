@@ -15,30 +15,31 @@ from sklearn.preprocessing import LabelEncoder
 st.title("Simple Streamlit ML Model")
 
 # Fix 1: Handle Lottie file loading safely
-def load_lottiefile(filepath: str):
-    try:
-        with open(filepath, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception as e:
-        st.error(f"Error loading Lottie file: {e}")
-        return None
+# def load_lottiefile(filepath: str):
+#     try:
+#         with open(filepath, "r", encoding="utf-8") as f:
+#             return json.load(f)
+#     except Exception as e:
+#         st.error(f"Error loading Lottie file: {e}")
+#         return None
 
+# with st.sidebar:
+#     st.title("List of Contents")
+    
+#     # Fix 2: Use relative path and ensure file exists
+#     lottie_coding = load_lottiefile("M:\Projects\streamlitproject-main\Animation - 1712585147924.json")  # Renamed to .json if needed
+    
+#     if lottie_coding:
+#         st_lottie(lottie_coding, 
+#                  speed=1,
+#                  reverse=False,
+#                  loop=True,
+#                  quality="low",
+#                  height=None,
+#                  width=None,
+#                  key=None)
 with st.sidebar:
-    st.title("List of Contents")
-    
-    # Fix 2: Use relative path and ensure file exists
-    lottie_coding = load_lottiefile("M:\Projects\streamlitproject-main\Animation - 1712585147924.json")  # Renamed to .json if needed
-    
-    if lottie_coding:
-        st_lottie(lottie_coding, 
-                 speed=1,
-                 reverse=False,
-                 loop=True,
-                 quality="low",
-                 height=None,
-                 width=None,
-                 key=None)
-    
+    st.title("List of Contents")   
     choice = st.radio("Menu", ["Home", "Train Model", "Predict"])
 
 if choice == "Train Model":
